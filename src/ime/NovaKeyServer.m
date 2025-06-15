@@ -8,10 +8,13 @@
 @implementation NovaKeyServer
 
 - (instancetype)init {
-    self = [super initWithName:NOVAKEY_CONNECTION_NAME 
-                  bundleIdentifier:NOVAKEY_BUNDLE_ID];
+    // Use the modern initialization method
+    NSString* connectionName = NOVAKEY_CONNECTION_NAME;
+    NSBundle* bundle = [NSBundle mainBundle];
+    
+    self = [super initWithName:connectionName bundleIdentifier:bundle.bundleIdentifier];
     if (self) {
-        NSLog(@"NovaKey IME Server initialized");
+        NSLog(@"NovaKey IME Server initialized with bundle: %@", bundle.bundleIdentifier);
     }
     return self;
 }
