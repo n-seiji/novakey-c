@@ -1,0 +1,9 @@
+{
+  "ollama_url": "http://localhost:11434",
+  "embedding_model": "nomic-embed-text",
+  "dictionary_path": "resources/dictionary.txt",
+  "embedding_weight": 0.6,
+  "phonetic_weight": 0.4,
+  "max_candidates": 10,
+  "debug_logging": true
+}
