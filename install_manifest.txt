@@ -1,0 +1,4 @@
+/Library/Input Methods/NovaKey.app/Contents/MacOS/NovaKey
+/Library/Input Methods/NovaKey.app/Contents/Resources/config.json
+/Library/Input Methods/NovaKey.app/Contents/Resources/dictionary.txt
+/Library/Input Methods/NovaKey.app/Contents/Info.plist

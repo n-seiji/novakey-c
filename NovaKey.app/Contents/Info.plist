@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>NovaKey</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.novakey.inputmethod</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>NovaKey</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.15</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSPrincipalClass</key>
+    <string>NovaKeyServer</string>
+    <key>InputMethodConnectionName</key>
+    <string>NovaKey_1_Connection</string>
+    <key>InputMethodServerControllerClass</key>
+    <string>NovaKeyServer</string>
+    <key>TISIntendedLanguage</key>
+    <string>ja</string>
+    <key>ComponentInputModeDict</key>
+    <dict>
+        <key>tsInputModeListKey</key>
+        <dict>
+            <key>com.novakey.inputmethod.Japanese</key>
+            <dict>
+                <key>TISInputSourceID</key>
+                <string>com.novakey.inputmethod.Japanese</string>
+                <key>tsInputModeMenuIconFileKey</key>
+                <string></string>
+                <key>tsInputModeAlternateMenuIconFileKey</key>
+                <string></string>
+                <key>tsInputModeDefaultStateKey</key>
+                <true/>
+                <key>tsInputModePaletteKey</key>
+                <false/>
+                <key>tsInputModeScriptKey</key>
+                <string>smJapanese</string>
+                <key>tsInputModePrimaryInScriptKey</key>
+                <true/>
+                <key>tsInputModeKeyEquivalentModifiersKey</key>
+                <integer>1048576</integer>
+                <key>tsInputModeKeyEquivalentKey</key>
+                <string> </string>
+                <key>tsInputModeIsVisibleKey</key>
+                <true/>
+                <key>TISIntendedLanguage</key>
+                <string>ja</string>
+            </dict>
+        </dict>
+        <key>tsVisibleInputModeOrderedArrayKey</key>
+        <array>
+            <string>com.novakey.inputmethod.Japanese</string>
+        </array>
+    </dict>
+    <key>tsInputMethodCharacterRepertoireKey</key>
+    <array>
+        <string>Hira</string>
+        <string>Kana</string>
+    </array>
+</dict>
+</plist> 

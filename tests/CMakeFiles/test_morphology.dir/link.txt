@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -mmacosx-version-min=10.15 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_morphology.dir/test_morphology.c.o CMakeFiles/test_morphology.dir/__/src/morphology/mecab_wrapper.c.o -o test_morphology  -L/opt/homebrew/Cellar/mecab/0.996/lib -lmecab -lstdc++

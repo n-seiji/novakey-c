@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/cmake_install.cmake",
+		"/Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
