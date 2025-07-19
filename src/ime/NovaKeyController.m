@@ -1,11 +1,17 @@
 #import <Foundation/Foundation.h>
 #import <InputMethodKit/InputMethodKit.h>
 #import "../../include/novakey.h"
+#import "../../include/search.h"
+#import "../../include/embedding.h"
+#import "../../include/morphology.h"
 
 @interface NovaKeyController : IMKInputController {
     NovaKeyInputMode _currentMode;
     NSMutableString* _compositionBuffer;
     NSMutableArray* _candidates;
+    SearchConfig* _searchConfig;
+    Dictionary* _dictionary;
+    OllamaClient* _ollamaClient;
 }
 
 @property (nonatomic, assign) NovaKeyInputMode currentMode;
@@ -22,7 +28,14 @@
         _currentMode = NovaKeyInputModeEnglish;
         _compositionBuffer = [[NSMutableString alloc] init];
         _candidates = [[NSMutableArray alloc] init];
+        
+        // Initialize search components
+        _searchConfig = create_search_config();
+        _dictionary = load_dictionary("resources/dictionary.txt");
+        _ollamaClient = ollama_client_create("http://localhost:11434", "nomic-embed-text");
+        
         NSLog(@"NovaKey Controller initialized for client: %@", inputClient);
+        NSLog(@"Dictionary loaded with %d entries", _dictionary ? _dictionary->entry_count : 0);
     }
     return self;
 }
@@ -104,20 +117,28 @@
         return;
     }
     
-    // TODO: Process composition with morphological analysis and embedding
+    // Generate candidates for current composition
+    [self generateCandidates];
+    
     NSString* displayText = [NSString stringWithFormat:@"%@", _compositionBuffer];
     
     [sender setMarkedText:displayText
            selectionRange:NSMakeRange(displayText.length, 0)
         replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
     
-    NSLog(@"Updated composition: %@", displayText);
+    NSLog(@"Updated composition: %@ (candidates: %lu)", displayText, (unsigned long)_candidates.count);
 }
 
 - (void)commitComposition:(id)sender {
     if (_compositionBuffer.length > 0) {
-        // TODO: Get best candidate from embedding/phonetic ranking
-        NSString* commitText = [NSString stringWithString:_compositionBuffer];
+        NSString* commitText;
+        
+        // Use first candidate if available, otherwise use raw input
+        if (_candidates.count > 0) {
+            commitText = [_candidates objectAtIndex:0];
+        } else {
+            commitText = [NSString stringWithString:_compositionBuffer];
+        }
         
         [sender insertText:commitText 
             replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
@@ -138,6 +159,50 @@
         replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
     
     NSLog(@"Cancelled composition");
+}
+
+- (void)generateCandidates {
+    if (!_dictionary || _compositionBuffer.length == 0) {
+        [_candidates removeAllObjects];
+        return;
+    }
+    
+    const char* inputText = [_compositionBuffer UTF8String];
+    
+    // Generate morphological analysis
+    MorphResult* morphResult = analyze_text(inputText);
+    
+    // Search for candidates
+    CandidateList* candidateList = search_candidates(inputText, morphResult, _dictionary, _searchConfig, _ollamaClient);
+    
+    // Convert C candidates to NSArray
+    [_candidates removeAllObjects];
+    if (candidateList) {
+        for (int i = 0; i < candidateList->candidate_count; i++) {
+            NSString* candidateText = [NSString stringWithUTF8String:candidateList->candidates[i].text];
+            [_candidates addObject:candidateText];
+        }
+        free_candidate_list(candidateList);
+    }
+    
+    if (morphResult) {
+        free_morph_result(morphResult);
+    }
+    
+    NSLog(@"Generated %lu candidates for input: %@", (unsigned long)_candidates.count, _compositionBuffer);
+}
+
+- (void)dealloc {
+    if (_searchConfig) {
+        free_search_config(_searchConfig);
+    }
+    if (_dictionary) {
+        free_dictionary(_dictionary);
+    }
+    if (_ollamaClient) {
+        ollama_client_destroy(_ollamaClient);
+    }
+    [super dealloc];
 }
 
 @end

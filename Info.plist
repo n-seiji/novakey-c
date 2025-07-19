@@ -10,65 +10,119 @@
     <string>com.novakey.inputmethod</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
-    <key>CFBundleName</key>
-    <string>NovaKey</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+    <key>CFBundleName</key>
+    <string>NovaKey</string>
+    <key>CFBundleDisplayName</key>
+    <string>NovaKey</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0.0</string>
     <key>CFBundleVersion</key>
     <string>1</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2024 NovaKey. All rights reserved.</string>
     <key>LSMinimumSystemVersion</key>
     <string>10.15</string>
+
     <key>LSUIElement</key>
     <true/>
+    <key>LSBackgroundOnly</key>
+    <true/>
+
     <key>NSPrincipalClass</key>
-    <string>NovaKeyServer</string>
+    <string>$(PRODUCT_MODULE_NAME).NSManualApplication</string>
     <key>InputMethodConnectionName</key>
-    <string>NovaKey_1_Connection</string>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)_Connection</string>
     <key>InputMethodServerControllerClass</key>
-    <string>NovaKeyServer</string>
+    <string>$(PRODUCT_MODULE_NAME).NovaKeyServer</string>
+
     <key>TISIntendedLanguage</key>
     <string>ja</string>
+
+    <key>tsInputMethodCharacterRepertoireKey</key>
+    <array>
+        <string>Latn</string>
+        <string>Hira</string>
+        <string>Kana</string>
+    </array>
+    <key>tsInputMethodIconFileKey</key>
+    <string>main.tiff</string>
+
     <key>ComponentInputModeDict</key>
     <dict>
+        <key>tsVisibleInputModeOrderedArrayKey</key>
+        <array>
+            <string>com.novakey.inputmethod.Japanese</string>
+            <string>com.novakey.inputmethod.Roman</string>
+        </array>
+
         <key>tsInputModeListKey</key>
         <dict>
             <key>com.novakey.inputmethod.Japanese</key>
             <dict>
                 <key>TISInputSourceID</key>
-                <string>com.novakey.inputmethod.Japanese</string>
-                <key>tsInputModeMenuIconFileKey</key>
-                <string></string>
-                <key>tsInputModeAlternateMenuIconFileKey</key>
-                <string></string>
-                <key>tsInputModeDefaultStateKey</key>
-                <true/>
-                <key>tsInputModePaletteKey</key>
-                <false/>
-                <key>tsInputModeScriptKey</key>
-                <string>smJapanese</string>
+                <string>$(PRODUCT_BUNDLE_IDENTIFIER).Japanese</string>
                 <key>tsInputModePrimaryInScriptKey</key>
                 <true/>
+                <key>tsInputModeScriptKey</key>
+                <string>smJapanese</string>
+                <key>tsInputModeJISKeyboardShortcutKey</key>
+                <integer>1</integer>
+                <key>tsInputModeKeyEquivalentModifiersKey</key>
+                <integer>4608</integer>
+                <key>tsInputModeKeyEquivalentKey</key>
+                <string>J</string>
+                <key>tsInputModeDefaultStateKey</key>
+                <true/>
+                <key>tsInputModeIsVisibleKey</key>
+                <true/>
+                <key>tsInputModePaletteIconFileKey</key>
+                <string>main.tiff</string>
+                <key>tsInputModeAlternateMenuIconFileKey</key>
+                <string>main.tiff</string>
+                <key>tsInputModeMenuIconFileKey</key>
+                <string>main.tiff</string>
+                <key>tsInputMethodAlternateIconFileKey</key>
+                <string>main.tiff</string>
+                <key>TISIntendedLanguage</key>
+                <string>ja</string>
+                <key>TISIconIsTemplate</key>
+                <true/>
+            </dict>
+
+            <key>com.novakey.inputmethod.Roman</key>
+            <dict>
+                <key>TISInputSourceID</key>
+                <string>$(PRODUCT_BUNDLE_IDENTIFIER).Roman</string>
+                <key>tsInputModePrimaryInScriptKey</key>
+                <false/>
+                <key>tsInputModeScriptKey</key>
+                <string>smRoman</string>
+                <key>tsInputModeJISKeyboardShortcutKey</key>
+                <integer>3</integer>
                 <key>tsInputModeKeyEquivalentModifiersKey</key>
                 <integer>1048576</integer>
                 <key>tsInputModeKeyEquivalentKey</key>
                 <string> </string>
+                <key>tsInputModeDefaultStateKey</key>
+                <true/>
                 <key>tsInputModeIsVisibleKey</key>
                 <true/>
+                <key>tsInputModePaletteIconFileKey</key>
+                <string>en.tiff</string>
+                <key>tsInputModeAlternateMenuIconFileKey</key>
+                <string>en.tiff</string>
+                <key>tsInputModeMenuIconFileKey</key>
+                <string>en.tiff</string>
+                <key>tsInputMethodAlternateIconFileKey</key>
+                <string>en.tiff</string>
                 <key>TISIntendedLanguage</key>
-                <string>ja</string>
+                <string>en</string>
+                <key>TISIconIsTemplate</key>
+                <true/>
             </dict>
         </dict>
-        <key>tsVisibleInputModeOrderedArrayKey</key>
-        <array>
-            <string>com.novakey.inputmethod.Japanese</string>
-        </array>
     </dict>
-    <key>tsInputMethodCharacterRepertoireKey</key>
-    <array>
-        <string>Hira</string>
-        <string>Kana</string>
-    </array>
 </dict>
-</plist> 
+</plist>

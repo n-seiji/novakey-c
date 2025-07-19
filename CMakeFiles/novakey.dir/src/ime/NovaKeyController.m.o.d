@@ -1398,4 +1398,19 @@ CMakeFiles/novakey.dir/src/ime/NovaKeyController.m.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreData.framework/Headers/NSCoreDataCoreSpotlightDelegate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/InputMethodKit.framework/Headers/IMKCandidates.h \
   /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/novakey.h \
-  /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/novakey_core.h
+  /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/novakey_core.h \
+  /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/search.h \
+  /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/morphology.h \
+  /opt/homebrew/Cellar/mecab/0.996/include/mecab.h \
+  /Users/seiji-nakayama/ghq/github.com/n-seiji/novakey-c/src/ime/../../include/embedding.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/curl.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/curlver.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/system.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/easy.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/multi.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/urlapi.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/header.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/websockets.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/mprintf.h \
+  /opt/homebrew/include/cjson/cJSON.h
